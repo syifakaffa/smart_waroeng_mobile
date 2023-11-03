@@ -75,10 +75,22 @@ class ShopCard extends StatelessWidget {
 
   const ShopCard(this.item, {super.key}); // Constructor
 
+  Color getButtonColor(ShopItem item) {
+    if (item.name == "Lihat Item") {
+      return Colors.teal.shade300; // Ubah warna sesuai kebutuhan
+    } else if (item.name == "Tambah Item") {
+      return Colors.indigo.shade300; // Ubah warna sesuai kebutuhan
+    } else if (item.name == "Logout") {
+      return Colors.red.shade300; // Ubah warna sesuai kebutuhan
+    } else {
+      return Colors.indigo; // Warna default
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Material(
-      color: Colors.indigo,
+      color: getButtonColor(item), // Gunakan warna sesuai nama tombol
       child: InkWell(
         // Area responsive terhadap sentuhan
         onTap: () {
