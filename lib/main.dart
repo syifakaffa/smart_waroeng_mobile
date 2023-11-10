@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:smart_waroeng/menu.dart';
+import 'package:smart_waroeng/screens/menu.dart';
 
 void main() {
   runApp(const MyApp());
@@ -31,10 +31,9 @@ class MyApp extends StatelessWidget {
         // tested with just a hot reload.
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.indigo),
        
+        useMaterial3: true,
       ),
-      home: MyHomePage(),
+      home: MyHomePage()
     );
   }
 }
-
-
