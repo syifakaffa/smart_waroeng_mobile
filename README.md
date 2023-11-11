@@ -6,6 +6,50 @@ NPM     : 2206816430
 
 Kelas   : PBP-C
 
+# TUGAS 8
+### Jelaskan perbedaan antara Navigator.push() dan Navigator.pushReplacement(), disertai dengan contoh mengenai penggunaan kedua metode tersebut yang tepat!
+
+Sebenarnya, kedua method tersebut mirip karena keduanya digunakan untuk melakukan navigasi atau perpindahan antar halaman dalam aplikasi Flutter. Namun, terdapat perbedaan dasar antar keduanya, yaitu terletak pada apa yang dilakukan kepada route yang berada pada atas stack.
+
+1. Navigator.push() : Menambahkan route baru diatas route yang sudah ada pada atas stack, sehingga pengguna dapat kembali ke halaman sebelumnya menggunakan tombol kembali. Contohnya yaitu, saat pengguna menekan tombol "Tambah item", route ShopFormPage() akan di add di atas stack dan saat halaman ShopFormPage sudah ditampilkan, pengguna dapat menekan tombol kembali ke halaman menu.
+2. Navigator.pushReplacement() : Menggantikan route yang sudah ada pada atas stack dengan route baru tersebut, sehingga cocok digunakan ketika ingin mengganti halaman saat ini dengan halaman baru dan tidak ingin pengguna kembali ke halaman sebelumnya. Contohnya yaitu pada saat tombol "tambah item" yang ada pada left_drawer.dart dan beralih ke page form tambah item, saat pengguna menekan tombol kembali, maka pengguna tidak dapat kembali ke halaman utama aplikasi.
+
+### Jelaskan masing-masing layout widget pada Flutter dan konteks penggunaannya masing-masing!
+
+| Layout Widget | Konteks Penggunaan |
+| ----- | ----- |
+| Container | mengkombinasi common painting, positioning, dan sizing widgets |
+| Coloumn | layouts (mengatur tata letak) daftar child widget dalam arah vertikal |
+| Row | melakukan layouts (mengatur tata letak) daftar child widgets dalam arah horizontal |
+| Expanded | memberikan ruang tambahan kepada elemen anaknya dalam Column, flex atau Row.|
+| SizedBox | memberikan dimensi tetap, baik lebar, tinggi, atau keduanya, pada elemen anaknya.|
+| Padding | menyisipkan turunannya berdasarkan padding yang diberikan.|
+| GridView | menampilkan elemen-elemen dalam bentuk grid, baik vertikal atau horizontal|
+| Wrap | Widget yang menampilkan turunannya dalam beberapa proses horizontal atau vertikal.|
+| Stack |  memungkinkan penumpukan elemen-elemen satu di atas yang lain. Digunakan ketika Anda ingin menumpuk beberapa widget.|
+| ListView | membuat daftar gulir (scrollable) dari elemen-elemen. Ideal untuk menampilkan daftar panjang atau dinamis|
+
+### Sebutkan apa saja elemen input pada form yang kamu pakai pada tugas kali ini dan jelaskan mengapa kamu menggunakan elemen input tersebut!
+| Elemen Input Form | Alasan |
+| ----- | ----- |
+| TextFormField() | digunakan karena data yang saya butuhkan barupa input teks atau angka|
+| ElevatedButton | digunakan karena untuk memberikan tampilann yang menarik dan memberikan feedback visual kepada user saat tombol ditekan |
+
+### Bagaimana penerapan clean architecture pada aplikasi Flutter?
+Clean architecture ditujukan untuk memisahkan kode untuk business-logic dengan kode yang berhubungan dengan platform seperti UI, state management, dan sumber data eksternal. Melalui clean architecture, kode yang kita tulis dapat lebih mudah untuk diuji secara independen. Clean architecture sendiri dalam penerapannya membagi project kedalam 3 lapisan, yaitu: 
+
+1. Lapisan data & platform : Lapisan paling luar yang membangun tampilan aplikasi serta terdiri dari sumber data seperti Resp API, local database, dll. 
+2. Lapisan presentation : Lapisan yang terdiri dari kode yang menjembatani komunikasi antara data dengan tampilan aplikasi yang disebut repository. 
+3. Lapisan domain : Lapisan terdalam yang terdiri dari kode-kode business-logic aplikasi seperti entities dan usecases.
+
+### Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step! (bukan hanya sekadar mengikuti tutorial)
+- Membuat halaman formulir (smart_waroeng_form.dart) untuk saat tombol "Tambah Item" ditekan. Didalamnya, terdapat tiga elemen input yang menggunakan TextFormField dengan nama name, amount, dan description. 
+- Membuat tombol save pada smart_waroeng_form.dart yang hanya bisa ditekan (memunculkan aksi) saat semua elemen field terisi.
+- Membuat pop up informasi input pengguna saat tombol save berhasil ditekan.
+- Membuat file baru left_drawer.dart yang akan berisi "Halaman Utama" untuk mengarahkan ke homePage dan "Tambah Item" untuk mengarahkan ke halaman smart_waroeng_form.dart (mengisi tambah item)
+- Untuk soal bonus :
+- menjawab readme dan melakukan add-commit-push ke Github.
+
 # TUGAS 7
 **1. Apa perbedaan utama antara stateless dan stateful widget dalam konteks pengembangan aplikasi Flutter?**
    
