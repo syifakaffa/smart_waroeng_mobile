@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:smart_waroeng/screens/menu.dart';
 import 'package:smart_waroeng/screens/smartwaroeng_form.dart';
+import 'package:smart_waroeng/screens/lihat_item.dart';
 
 class ShopCard extends StatelessWidget {
   final ShopItem item;
@@ -31,14 +32,13 @@ class ShopCard extends StatelessWidget {
             ..hideCurrentSnackBar()
             ..showSnackBar(SnackBar(
                 content: Text("Kamu telah menekan tombol ${item.name}!")));
-          // Navigate ke route yang sesuai (tergantung jenis tombol)
           if (item.name == "Tambah Item") {
-            // Gunakan Navigator.push untuk melakukan navigasi ke MaterialPageRoute yang mencakup ShopFormPage.
-            Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => ShopFormPage(),
-                  ));
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => const ShopFormPage()));
+          }
+          if (item.name == "Lihat Item") {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => LihatItem()));
           }
         },
         child: Container(

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:smart_waroeng/screens/menu.dart';
 import 'package:smart_waroeng/screens/smartwaroeng_form.dart';
+import 'package:smart_waroeng/screens/lihat_item.dart';
 
 class LeftDrawer extends StatelessWidget {
   const LeftDrawer({super.key});
@@ -11,7 +12,6 @@ class LeftDrawer extends StatelessWidget {
       child: ListView(
         children: [
           const DrawerHeader(
-            // Bagian drawer header
             decoration: BoxDecoration(
               color: Colors.indigo,
             ),
@@ -27,19 +27,18 @@ class LeftDrawer extends StatelessWidget {
                   ),
                 ),
                 Padding(padding: EdgeInsets.all(10)),
-                Text("Catat stok barang tokomu di sini!",
-                    // Tambahkan gaya teks dengan center alignment, font ukuran 15, warna putih, dan weight biasa
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontSize: 15,
-                      color: Colors.white,
-                      fontWeight: FontWeight.normal,
-                    ),
+                Text(
+                  "Catat seluruh stok tokomu disini!",
+                  style:  TextStyle(
+                    fontSize: 15,
+                    color:  Colors.white,
+                    fontWeight:  FontWeight.normal,
+                  ),
+                  textAlign: TextAlign.center,
                 ),
               ],
             ),
           ),
-          // Bagian routing
           ListTile(
             leading: const Icon(Icons.home_outlined),
             title: const Text('Halaman Utama'),
@@ -57,14 +56,22 @@ class LeftDrawer extends StatelessWidget {
             title: const Text('Tambah Produk'),
             // Bagian redirection ke ShopFormPage
             onTap: () {
-              /*
-              Buatlah routing ke ShopFormPage di sini,
-              setelah halaman ShopFormPage sudah dibuat.
-              */
-              Navigator.pushReplacement(
+              Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => ShopFormPage(),
+                    builder: (context) => const ShopFormPage(),
+                  ));
+            },
+          ),
+          ListTile(
+            leading: const Icon(Icons.checklist),
+            title: const Text('Lihat Semua Produk'),
+            // Bagian redirection ke ShopFormPage
+            onTap: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const LihatItem(),
                   ));
             },
           ),
