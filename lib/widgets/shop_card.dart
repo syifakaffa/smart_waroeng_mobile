@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:smart_waroeng/screens/menu.dart';
 import 'package:smart_waroeng/screens/smartwaroeng_form.dart';
 import 'package:smart_waroeng/screens/lihat_item.dart';
+import 'package:smart_waroeng/screens/list_product.dart';
 
 class ShopCard extends StatelessWidget {
   final ShopItem item;
@@ -36,9 +37,13 @@ class ShopCard extends StatelessWidget {
             Navigator.push(context,
                 MaterialPageRoute(builder: (context) => const ShopFormPage()));
           }
-          if (item.name == "Lihat Item") {
+          // if (item.name == "Lihat Item") {
+          //   Navigator.push(context,
+          //       MaterialPageRoute(builder: (context) => LihatItem()));
+          // }
+          else if (item.name == "Lihat Item") {
             Navigator.push(context,
-                MaterialPageRoute(builder: (context) => LihatItem()));
+                MaterialPageRoute(builder: (context) => const ProductPage()));
           }
         },
         child: Container(
