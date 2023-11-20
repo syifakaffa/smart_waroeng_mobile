@@ -48,6 +48,8 @@ Clean architecture ditujukan untuk memisahkan kode untuk business-logic dengan k
 - Membuat pop up informasi input pengguna saat tombol save berhasil ditekan.
 - Membuat file baru left_drawer.dart yang akan berisi "Halaman Utama" untuk mengarahkan ke homePage dan "Tambah Item" untuk mengarahkan ke halaman smart_waroeng_form.dart (mengisi tambah item)
 - Untuk soal bonus :
+   -Pada main.dart, saya membuat sebuah list untuk menyimpan semua model yang sudah diinstansiasi. Saya juga membuat file mode.dart untuk membuat model.
+   - Membuat berkas lihat_item.dart untuk menampilkan semua yang item yang diinput pengguna.
 - menjawab readme dan melakukan add-commit-push ke Github.
 
 # TUGAS 7
