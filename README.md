@@ -6,7 +6,48 @@ NPM     : 2206816430
 
 Kelas   : PBP-C
 
-# TUGAS 8
+<details>
+<summary> <b> TUGAS 9 </b> </summary>
+   
+**1. Apakah bisa kita melakukan pengambilan data JSON tanpa membuat model terlebih dahulu? Jika iya, apakah hal tersebut lebih baik daripada membuat model sebelum melakukan pengambilan data JSON?**
+
+Ya, kita bisa melakukan pengambilan data JSON tanpa membuat model terlebih dahulu. Namun, hal tersebut bisa dilakukan jika kita tidak memperlukan mapping data pada aplikasi kita. Selain itu, hal ini juga bisa dilakukan jika tipe data yang kita miliki adalah data yang dinamis, sebab data tersebut dapat mewakili objek JSON. Namun, akan lebih baik secara prakteknya jika kita membuat model terlebih dahulu agar kode yang kita buat lebih mudah terbaca dan diketahui tipe datanya. 
+
+**2. Jelaskan fungsi dari CookieRequest dan jelaskan mengapa instance CookieRequest perlu untuk dibagikan ke semua komponen di aplikasi Flutter.**
+
+CookieRequest berfungsi untuk mengelola permintaan HTTP dengan autentikasi berbasis cookie dan mengatur cookie untuk sesi pengguna. Diperlukan pembagian instance ke semua komponen agar cookie dapat dipertahankan sepanjang session.
+
+**3. Jelaskan mekanisme pengambilan data dari JSON hingga dapat ditampilkan pada Flutter.**
+
+Pertama, buat terlebih dahulu model sesuai dengan respons dari data JSON tersebut. Lalu, kita buat suatu http request ke web untuk melakukan fetch data. Untuk tugas ini, data diambil dari aplikasi webbb django tugas sebelumnya. Terakhir, data ditampilkan pada flutter melalui widget. 
+ 
+**4. Jelaskan mekanisme autentikasi dari input data akun pada Flutter ke Django hingga selesainya proses autentikasi oleh Django dan tampilnya menu pada Flutter.**
+
+Pada halaman login (LoginPage), user akan diminta input berupa username serta passwordnya untuk diisi. Username dan password  tersebut akan dikirim ke method login yang ada di app authentication yang ada pada web Django. Jika username dan password benar, maka method tersebut akan me-return status True dan user dapat masuk ke dalam aplikasi.
+ 
+**5. Sebutkan seluruh widget yang kamu pakai pada tugas ini dan jelaskan fungsinya masing-masing.**
+| Layout Widget | Konteks Penggunaan |
+| ----- | ----- |
+| ElevatedButton | digunakan karena untuk memberikan tampilann yang menarik dan memberikan feedback visual kepada user saat tombol ditekan (tombolnya "elevated") |
+| TextField | digunakan karena data yang saya butuhkan barupa input teks atau angka (untuk login) |
+| SizedBox | memberikan dimensi tetap, baik lebar, tinggi, atau keduanya, pada elemen anaknya|
+| Text | untuk menampilkan tulisan (detail product) dengan style yang sesuai |
+| Icon | menampilkan ikon yang sesuai |
+ 
+**6. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step! (bukan hanya sekadar mengikuti tutorial).**
+- Membuat app baru bernama authentication pada proyek django sbeelumnya. Lalu melakukan beberapa settings pada setting.py nya.
+- Membuat views untuk authentication yang nantinya akan digunakan pada saat login.
+- Menginstal package Flutter untuk melakukan kontak dengan webservice django.
+- Membuat file untuk login, yaitu login.dart di folder screens, lalu mengimplementasikan kode nya.
+- membuat model kustom dengan bantuan web Quicktype, lalu menambahkan dependency http nya.
+- Membuat file list_product.dart untuk tampilan "Lihat Item". Disini dilakukan fetch data dari Django tugas sebelumnya. Pada file ini, akan ditambilkan seluruh item yang ada di database django tugas sebelumnya, dan saya membuat ontap pada setiap item yang bis aberalih ke page deail product.
+- Membuat file detail product untuk menapilkan dtail suatu product.
+- Mengisi readme. 
+</details>
+
+<details>
+<summary> <b> TUGAS 8 </b> </summary>
+   
 ### Jelaskan perbedaan antara Navigator.push() dan Navigator.pushReplacement(), disertai dengan contoh mengenai penggunaan kedua metode tersebut yang tepat!
 
 Sebenarnya, kedua method tersebut mirip karena keduanya digunakan untuk melakukan navigasi atau perpindahan antar halaman dalam aplikasi Flutter. Namun, terdapat perbedaan dasar antar keduanya, yaitu terletak pada apa yang dilakukan kepada route yang berada pada atas stack.
@@ -51,8 +92,11 @@ Clean architecture ditujukan untuk memisahkan kode untuk business-logic dengan k
    -Pada main.dart, saya membuat sebuah list untuk menyimpan semua model yang sudah diinstansiasi. Saya juga membuat file mode.dart untuk membuat model.
    - Membuat berkas lihat_item.dart untuk menampilkan semua yang item yang diinput pengguna.
 - menjawab readme dan melakukan add-commit-push ke Github.
+</details>
 
-# TUGAS 7
+<details>
+<summary> <b> TUGAS 7 </b> </summary>
+   
 **1. Apa perbedaan utama antara stateless dan stateful widget dalam konteks pengembangan aplikasi Flutter?**
    
    Perbedaan utama antara stateless widget dan stateful widget dalam pengembangan aplikasi Flutter adalah cara keduanya mengelola state dan perilaku komponen UI aplikasi, misalnya:
@@ -89,6 +133,7 @@ Clean architecture ditujukan untuk memisahkan kode untuk business-logic dengan k
 - Membuat widget build, lalu mengatur agar snackbar muncul saat ketiga tombol sebelumnya ditekan pada agian  ScaffoldMessenger.of(context) sampai content Text yang muncul saat button ditekan.
 - membuat readme jawaban pertanyaan
 - add, commit, push ke github.
+</details>
 
 ## Getting Started
 
